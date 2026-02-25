@@ -1,0 +1,10 @@
+# Docker Compose for Docusaurus
+# Run: docker compose up -d
+
+services:
+  docusaurus:
+    image: kuberns/docusaurus-template:latest
+    container_name: docusaurus
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
