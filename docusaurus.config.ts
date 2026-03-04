@@ -4,13 +4,13 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'GOWRI K',
-  tagline: 'Full Stack Developer | AI & IoT Enthusiast',
+  // Enhanced tagline with a more "dynamic" feel
+  tagline: 'Crafting the future with Code, Intelligence, and Connected Things.',
   favicon: 'OIP.png',
 
   url: 'https://docusaurus-fork-main-5838d8b.kuberns.cloud',
   baseUrl: '/',
 
-  // GitHub configuration
   organizationName: 'Gowri456456', 
   projectName: 'Gowri-Portfolio',
 
@@ -28,9 +28,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          // Added an "edit this page" feel for a more open-source vibe
+          editUrl: 'https://github.com/Gowri456456/Gowri-Portfolio/tree/main/',
         },
         blog: {
           showReadingTime: true,
+          blogTitle: 'Tech Insights',
+          blogDescription: 'Thoughts on AI, IoT, and Web Development',
+          postsPerPage: 'ALL',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -40,25 +45,39 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    // Custom metadata for better SEO and social sharing
+    metadata: [
+      {name: 'keywords', content: 'fullstack, AI, IoT, developer, portfolio, BE CSE'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
+    // High-tech color mode defaults
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     navbar: {
-      title: 'GOWRI K',
+      title: 'GOWRI.DEV', // Short, punchy brand name
+      hideOnScroll: true, // Unique UX behavior
       logo: {
         alt: 'Gowri Logo',
         src: 'OIP.png',
+        style: { borderRadius: '50%' }, // Circle logo looks more modern
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Projects & Skills',
+          label: '🚀 Projects',
         },
-        {to: '/blog', position: 'left'},
+        {to: '/blog', label: '✍️ Blog', position: 'left'},
         {
           href: 'https://github.com/Gowri456456',
-          label: 'GitHub',
           position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
+          label: 'GitHub',
         },
         {
           href: 'https://www.linkedin.com/in/gowri-k-456gowri',
@@ -71,50 +90,36 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Contact Me',
+          title: 'Connect',
           items: [
-            {
-              label: 'Email: gowri456k@gmail.com',
-              to: 'mailto:gowri456k@gmail.com',
-            },
-            {
-              label: 'Phone: 8015370241',
-              to: 'tel:8015370241',
-            },
+            { label: 'Email', href: 'mailto:gowri456k@gmail.com' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/gowri-k-456gowri' },
+            { label: 'GitHub', href: 'https://github.com/Gowri456456' },
           ],
         },
         {
-          title: 'Profiles',
+          title: 'Academic Path',
           items: [
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/in/gowri-k-456gowri',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/Gowri456456',
-            },
+            { label: 'Jai Shriram Engineering College', to: '#' },
+            { label: 'BE CSE | 2023 - 2027', to: '#' },
           ],
         },
         {
-          title: 'Education',
+          title: 'Focus Areas',
           items: [
-            {
-              label: 'Jai Shriram Engineering College',
-              to: '#',
-            },
-            {
-              label: 'BE CSE (2023-2027)',
-              to: '#',
-            },
+            { label: 'Artificial Intelligence', to: '#' },
+            { label: 'Internet of Things', to: '#' },
+            { label: 'Full Stack Dev', to: '#' },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Gowri K. Built with Docusaurus & Kuberns AI.`,
+      // Use a template literal for a cleaner copyright
+      copyright: `// ${new Date().getFullYear()} • Handcrafted by Gowri K using Docusaurus`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      // Using 'Night Owl' or 'Dracula' for that "Hacker" aesthetic
+      theme: prismThemes.nightOwlLight,
+      darkTheme: prismThemes.nightOwl,
     },
   } satisfies Preset.ThemeConfig,
 };
